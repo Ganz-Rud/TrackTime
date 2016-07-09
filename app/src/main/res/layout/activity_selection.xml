@@ -22,7 +22,7 @@
             android:id="@+id/bus"
             android:layout_gravity="center_horizontal"
             android:text="@string/bus_button"
-            android:layout_weight="0.05" />
+            android:layout_weight="0.1" />
 
         <Button
             android:layout_width="210dp"
@@ -30,15 +30,15 @@
             android:text="@string/trolley_button"
             android:id="@+id/trolley"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.05" />
+            android:layout_weight="0.1" />
 
         <Button
             android:layout_width="210dp"
             android:layout_height="100dp"
             android:text="@string/tram_button"
-            android:id="@+id/tram"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.05" />
+            android:layout_weight="0.1"
+            android:id="@+id/tram" />
     </LinearLayout>
 
 </RelativeLayout>

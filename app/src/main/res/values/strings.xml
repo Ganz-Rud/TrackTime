@@ -12,6 +12,11 @@
     <string name="tram_button">Трамвай</string>
     <string name="title_activity_bus_start">Settings</string>
 
+    <!--Стартовый экран-->
+    <string name="start_go">В путь!</string>
+    <string name="start_statistics">Статистика</string>
+
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

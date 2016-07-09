@@ -12,9 +12,21 @@
     tools:context="com.example.gosha.tracktime.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="210dp"
+        android:layout_height="100dp"
+        android:text="@string/start_go"
+        android:id="@+id/go"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="210dp"
+        android:layout_height="100dp"
+        android:text="@string/start_statistics"
+        android:id="@+id/statistics"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
