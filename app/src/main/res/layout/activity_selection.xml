@@ -39,6 +39,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.1"
             android:id="@+id/tram" />
+
+        <Button
+            android:layout_width="210dp"
+            android:layout_height="100dp"
+            android:text="@string/metro_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.1"
+            android:id="@+id/metro" />
     </LinearLayout>
 
 </RelativeLayout>

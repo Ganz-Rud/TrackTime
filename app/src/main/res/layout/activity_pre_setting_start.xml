@@ -9,4 +9,54 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.gosha.tracktime.PreSettingStart">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="!Вид транспорта!"
+            android:id="@+id/transport"
+            android:paddingBottom="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="№ Маршрута : "
+                android:id="@+id/number_route"
+                android:layout_weight="0.05"
+                android:paddingBottom="30dp" />
+
+            <!--<Spinner-->
+                <!--android:layout_width="87dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/list_route"-->
+                <!--android:layout_weight="0.04"-->
+                <!--android:entries=""/>-->
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/textView2" />
+
+        <!--android:text="!Вид транспорта!"-->
+
+    </LinearLayout>
 </RelativeLayout>

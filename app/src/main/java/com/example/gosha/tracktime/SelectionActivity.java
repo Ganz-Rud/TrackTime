@@ -10,6 +10,7 @@ public class SelectionActivity extends AppCompatActivity {
     Button bus;
     Button trolley;
     Button tram;
+    Button metro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class SelectionActivity extends AppCompatActivity {
         bus = (Button)  findViewById(R.id.bus);
         trolley = (Button) findViewById(R.id.trolley);
         tram = (Button) findViewById(R.id.tram);
+        metro = (Button) findViewById(R.id.metro);
 
         bus.setOnClickListener(new View.OnClickListener() {
             @Override

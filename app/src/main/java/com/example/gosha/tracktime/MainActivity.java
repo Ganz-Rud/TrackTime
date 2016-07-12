@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Идёт синхронизация", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
                 Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
@@ -105,17 +105,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_bus) {
+            Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_troll) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_tram) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_metro) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_statistics) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_connect) {
 
         }
 
