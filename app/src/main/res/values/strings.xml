@@ -20,4 +20,12 @@
     <string name="bar_titel">НАЗВАНИЕ ПРОЕКТА</string>
     <string name="version">ver.0.0.1</string>
 
+
+
+    <string name="id_busTransmit">1</string>
+    <string name="id_trollTransmit">2</string>
+    <string name="id_trainTransmit">3</string>
+    <string name="id_metroTransmit">4</string>
+
+
 </resources>
