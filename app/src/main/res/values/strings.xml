@@ -27,5 +27,12 @@
     <string name="id_trainTransmit">3</string>
     <string name="id_metroTransmit">4</string>
 
+    <string-array name = "avtobus">
+        <item>первый</item>
+        <item>второй</item>
+        <item>третий</item>
+        <item>четвёртый</item>
+    </string-array>
+
 
 </resources>

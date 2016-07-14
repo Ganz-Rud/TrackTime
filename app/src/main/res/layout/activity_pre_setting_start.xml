@@ -43,12 +43,14 @@
                 android:paddingBottom="30dp"
                 android:layout_marginRight="20dp" />
 
-            <!--<Spinner-->
-                <!--android:layout_width="80dp"-->
-                <!--android:layout_height="20dp"-->
-                <!--android:id="@+id/list_route"-->
-                <!--android:entries=""/>-->
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_route"
+                android:entries ="@array/avtobus"/>
         </LinearLayout>
+
+
 
         <TextView
             android:layout_width="wrap_content"
