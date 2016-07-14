@@ -20,18 +20,71 @@
     <string name="bar_titel">НАЗВАНИЕ ПРОЕКТА</string>
     <string name="version">ver.0.0.1</string>
 
-
-
     <string name="id_busTransmit">1</string>
     <string name="id_trollTransmit">2</string>
     <string name="id_trainTransmit">3</string>
     <string name="id_metroTransmit">4</string>
 
     <string-array name = "avtobus">
-        <item>первый</item>
-        <item>второй</item>
-        <item>третий</item>
-        <item>четвёртый</item>
+        <item>1</item>
+        <item>2</item>
+        <item>12</item>
+        <item>43</item>
+    </string-array>
+
+    <string-array name = "trolley">
+        <item>13</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="tramv">
+        <item>5</item>
+        <item>19</item>
+    </string-array>
+
+    <string-array name="metro">
+        <item>Буревестник</item>
+        <item>Парк Культуры</item>
+    </string-array>
+
+    <string-array name="bus_1">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Площадь Лядова</item>
+        <item>Площадь Горького</item>
+        <item>Площадь Свободы</item>
+        <item>Площадь Минина</item>
+    </string-array>
+
+    <string-array name="bus_2">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Площадь Лядова</item>
+        <item>Площадь Горького</item>
+        <item>Площадь Лядова</item>
+        <item>Родионова</item>
+        <item>Подновье</item>
+        <item>Тех.Университет</item>
+    </string-array>
+
+    <string-array name="troll_16">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Дворец Спорта</item>
+        <item>Нартова</item>
+        <item>Кардиоцентр</item>
+        <item>Микрорайон-1</item>
+        <item>Микрорайон-2</item>
+        <item>4й Нагорный Микройрайон</item>
     </string-array>
 
 

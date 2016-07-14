@@ -27,9 +27,38 @@ public class PreSettingStart extends Activity {
         String selected = spinner.getSelectedItem().toString();
         Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
 
-        ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        Spinner spinner1 = (Spinner) findViewById(R.id.station_first);
+        String selected1 = spinner1.getSelectedItem().toString();
+        Toast.makeText(getApplicationContext(),selected1,Toast.LENGTH_SHORT).show();
 
+        Spinner spinner2 = (Spinner) findViewById(R.id.station_last);
+        String selected2 = spinner2.getSelectedItem().toString();
+        Toast.makeText(getApplicationContext(),selected2,Toast.LENGTH_SHORT).show();
+
+        ArrayAdapter<?> adapter;
+
+        switch (intent.getFlags())
+        {
+            case 11111:
+                adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                break;
+            case 22222:
+                adapter = ArrayAdapter.createFromResource(this, R.array.trolley, android.R.layout.simple_spinner_item );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                break;
+            case 33333:
+                adapter = ArrayAdapter.createFromResource(this, R.array.tramv, android.R.layout.simple_spinner_item );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                break;
+            case 44444:
+                adapter = ArrayAdapter.createFromResource(this, R.array.metro, android.R.layout.simple_spinner_item );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                break;
+        }
     }
 }

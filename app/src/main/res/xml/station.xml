@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <string name = "Щербинки-2">Щербинки - 2</string>
-    <string name = "Сахарова">Музей Сахарова</string>
-    <string name = "Лебедева">Лебедева</string>
-    <string name = "плЖукова">Площадь Жукова</string>
-    <string name = "Электрон">Кинотеатр Электрон</string>
-    <string name = "плЛядова">Площадь Лядова</string>
-    <string name = "плГорького">Площадь Горького</string>
-    <string name = "плСвободы">Площадь Свободы</string>
-    <string name = "плМинина">Площадь Минина</string>
+    <!--<string name = "Щербинки-2">Щербинки - 2</string>-->
+    <!--<string name = "Сахарова">Музей Сахарова</string>-->
+    <!--<string name = "Лебедева">Лебедева</string>-->
+    <!--<string name = "плЖукова">Площадь Жукова</string>-->
+    <!--<string name = "Электрон">Кинотеатр Электрон</string>-->
+    <!--<string name = "плЛядова">Площадь Лядова</string>-->
+    <!--<string name = "плГорького">Площадь Горького</string>-->
+    <!--<string name = "плСвободы">Площадь Свободы</string>-->
+    <!--<string name = "плМинина">Площадь Минина</string>-->
 
 </PreferenceScreen>
