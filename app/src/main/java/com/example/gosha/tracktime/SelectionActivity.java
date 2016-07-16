@@ -30,7 +30,7 @@ public class SelectionActivity extends AppCompatActivity {
         bus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectionActivity.this, PreSettingStart.class);
+                Intent intent = new Intent(SelectionActivity.this, BusActivity.class);
                 intent.setFlags(busStart);
                 startActivity(intent);
             }
@@ -39,7 +39,7 @@ public class SelectionActivity extends AppCompatActivity {
         trolley.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectionActivity.this, PreSettingStart.class);
+                Intent intent = new Intent(SelectionActivity.this, TrolleyActivity.class);
                 intent.setFlags(trollStart);
                 startActivity(intent);
             }
@@ -48,7 +48,7 @@ public class SelectionActivity extends AppCompatActivity {
         tram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectionActivity.this, PreSettingStart.class);
+                Intent intent = new Intent(SelectionActivity.this, TramActivity.class);
                 intent.setFlags(tramStart);
                 startActivity(intent);
             }
@@ -57,7 +57,7 @@ public class SelectionActivity extends AppCompatActivity {
         metro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectionActivity.this, PreSettingStart.class);
+                Intent intent = new Intent(SelectionActivity.this, MetroActivity.class);
                 intent.setFlags(metroStart);
                 startActivity(intent);
             }

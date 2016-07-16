@@ -26,7 +26,10 @@
         </activity>
         <activity android:name=".SelectionActivity" />
         <activity android:name=".PreSettingStart" />
-        <activity android:name=".BusActivity"></activity>
+        <activity android:name=".BusActivity" />
+        <activity android:name=".TrolleyActivity" />
+        <activity android:name=".TramActivity" />
+        <activity android:name=".MetroActivity"></activity>
     </application>
 
 </manifest>

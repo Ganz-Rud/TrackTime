@@ -43,8 +43,8 @@
     </string-array>
 
     <string-array name="metro">
-        <item>Буревестник</item>
-        <item>Парк Культуры</item>
+        <item>Сормовская линия</item>
+        <item>Автозаводская линия</item>
     </string-array>
 
     <string-array name="bus_1">
@@ -67,10 +67,41 @@
         <item>Кинотеатр Электрон</item>
         <item>Площадь Лядова</item>
         <item>Площадь Горького</item>
-        <item>Площадь Лядова</item>
+        <item>Площадь Сенная</item>
         <item>Родионова</item>
         <item>Подновье</item>
         <item>Тех.Университет</item>
+    </string-array>
+
+    <string-array name="bus_12">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Студенческая</item>
+        <item>Площадь Революции</item>
+        <item>Площадь Комсомольская</item>
+        <item>Актюбинская</item>
+        <item>Ярошенко</item>
+        <item>Циолковского</item>
+        <item>проспект 70 лет октября</item>
+        <item>7-й Микрорайон</item>
+        <item>ЗКПД-4</item>
+    </string-array>
+
+    <string-array name="bus_43">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Площадь Лядова</item>
+        <item>Площадь Горького</item>
+        <item>Стрелка</item>
+        <item>площадь Ленина</item>
+        <item>площадь Революции</item>
+        <item>Долгополова</item>
     </string-array>
 
     <string-array name="troll_16">
@@ -87,5 +118,62 @@
         <item>4й Нагорный Микройрайон</item>
     </string-array>
 
+    <string-array name="troll_13">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Дворец Спорта</item>
+        <item>Нартова</item>
+        <item>Площадь Советская</item>
+        <item>Ванеева</item>
+        <item>Площадь Свободы</item>
+        <item>площадь Минина</item>
+    </string-array>
 
+    <string-array name="tram_5">
+        <item>Мыза</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Щелоковский хутор</item>
+        <item>Нартова</item>
+        <item>Артельная</item>
+        <item>Студенческая (трамвай)</item>
+        <item>Кулибина</item>
+    </string-array>
+
+    <string-array name="tram_19">
+        <item>Мыза</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Щелоковский хутор</item>
+        <item>Нартова</item>
+        <item>Заярская</item>
+        <item>Горловская</item>
+        <item>Головнина</item>
+        <item>Надежды Сусловой</item>
+        <item>Бориса Корнилова</item>
+        <item>Трамвайное депо №1</item>
+    </string-array>
+
+    <string-array name="metro_burevestnik">
+        <item>Горьковская</item>
+        <item>Московская</item>
+        <item>Канавинская</item>
+        <item>Бурнаковская</item>
+        <item>Буревестник</item>
+    </string-array>
+
+    <string-array name="metro_avtoz">
+        <item>Горьковская</item>
+        <item>Московская</item>
+        <item>Чкаловская</item>
+        <item>Ленинская</item>
+        <item>Заречная</item>
+        <item>Двигатель Революции</item>
+        <item>Пролетарская</item>
+        <item>Автозаводская</item>
+        <item>Комсомольская</item>
+        <item>Кировская</item>
+        <item>Парк культуры</item>
+    </string-array>
 </resources>

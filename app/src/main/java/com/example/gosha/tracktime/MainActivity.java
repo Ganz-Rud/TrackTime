@@ -116,17 +116,17 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_troll) {
-            Intent intent = new Intent(MainActivity.this, PreSettingStart.class);
+            Intent intent = new Intent(MainActivity.this, TrolleyActivity.class);
             intent.setFlags(trollStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_tram) {
-            Intent intent = new Intent(MainActivity.this, PreSettingStart.class);
+            Intent intent = new Intent(MainActivity.this, TramActivity.class);
             intent.setFlags(tramStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_metro) {
-            Intent intent = new Intent(MainActivity.this, PreSettingStart.class);
+            Intent intent = new Intent(MainActivity.this, MetroActivity.class);
             intent.setFlags(metroStart);
             startActivity(intent);
 

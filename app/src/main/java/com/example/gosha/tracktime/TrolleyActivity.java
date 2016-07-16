@@ -9,7 +9,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class BusActivity extends Activity implements AdapterView.OnItemSelectedListener
+public class TrolleyActivity extends Activity implements AdapterView.OnItemSelectedListener
 {
     TextView textView;
     TextView textView2;
@@ -19,7 +19,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bus_activity);
+        setContentView(R.layout.activity_trolley);
 
         textView = (TextView) findViewById(R.id.textView2);
         textView2 = (TextView) findViewById(R.id.textView3);
@@ -29,7 +29,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
 
         ArrayAdapter<?> adapter;
-        adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
+        adapter = ArrayAdapter.createFromResource(this, R.array.trolley, android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -52,58 +52,35 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         ArrayAdapter<?> adapter2;
 
         switch (choiceOfBus) {
-            case "1":
-                adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_1, android.R.layout.simple_spinner_item);
+            case "13":
+                adapter1 = ArrayAdapter.createFromResource(this, R.array.troll_13, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
                 spinner1.setOnItemSelectedListener(this);
                 break;
-            case "2":
-                adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_2, android.R.layout.simple_spinner_item);
-                adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner1.setAdapter(adapter1);
-                spinner1.setOnItemSelectedListener(this);
-                break;
-            case "12":
-                adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_12, android.R.layout.simple_spinner_item);
-                adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner1.setAdapter(adapter1);
-                spinner1.setOnItemSelectedListener(this);
-                break;
-            case "43":
-                adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_43, android.R.layout.simple_spinner_item);
+            case "16":
+                adapter1 = ArrayAdapter.createFromResource(this, R.array.troll_16, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
                 spinner1.setOnItemSelectedListener(this);
                 break;
         }
         switch (choiceOfBus) {
-            case "1":
-                adapter2 = ArrayAdapter.createFromResource(this, R.array.bus_1, android.R.layout.simple_spinner_item);
+            case "13":
+                adapter2 = ArrayAdapter.createFromResource(this, R.array.troll_13, android.R.layout.simple_spinner_item);
                 adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner2.setAdapter(adapter2);
                 spinner2.setOnItemSelectedListener(this);
                 break;
-            case "2":
-                adapter2 = ArrayAdapter.createFromResource(this, R.array.bus_2, android.R.layout.simple_spinner_item);
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner2.setAdapter(adapter2);
-                spinner2.setOnItemSelectedListener(this);
-                break;
-            case "12":
-                adapter2 = ArrayAdapter.createFromResource(this, R.array.bus_12, android.R.layout.simple_spinner_item);
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner2.setAdapter(adapter2);
-                spinner2.setOnItemSelectedListener(this);
-                break;
-            case "43":
-                adapter2 = ArrayAdapter.createFromResource(this, R.array.bus_43, android.R.layout.simple_spinner_item);
+            case "16":
+                adapter2 = ArrayAdapter.createFromResource(this, R.array.troll_16, android.R.layout.simple_spinner_item);
                 adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner2.setAdapter(adapter2);
                 spinner2.setOnItemSelectedListener(this);
                 break;
         }
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
