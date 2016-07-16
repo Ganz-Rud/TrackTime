@@ -25,14 +25,14 @@
     <string name="id_trainTransmit">3</string>
     <string name="id_metroTransmit">4</string>
 
-    <string-array name = "avtobus">
+    <string-array name="avtobus">
         <item>1</item>
         <item>2</item>
         <item>12</item>
         <item>43</item>
     </string-array>
 
-    <string-array name = "trolley">
+    <string-array name="trolley">
         <item>13</item>
         <item>16</item>
     </string-array>

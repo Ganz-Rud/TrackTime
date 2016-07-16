@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_bus) {
-            Intent intent = new Intent(MainActivity.this, PreSettingStart.class);
+            Intent intent = new Intent(MainActivity.this, BusActivity.class);
             intent.setFlags(busStart);
             startActivity(intent);
 
