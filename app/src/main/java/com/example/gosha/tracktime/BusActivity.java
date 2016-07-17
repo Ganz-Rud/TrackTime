@@ -2,6 +2,8 @@ package com.example.gosha.tracktime;
 
 import android.app.Activity;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -14,11 +16,16 @@ import android.widget.Toast;
 
 public class BusActivity extends Activity implements AdapterView.OnItemSelectedListener
 {
+    private SQLiteHelper sQlite;
+
     Spinner spinner, spinner1, spinner2;
     String choiceOfBus;
     Button go, stop, cancel;
     long elapsedMillis;
     int stopCounter;
+    String selected = "";
+    String selected1 = "";
+    String selected2 = "";
 
     Chronometer mChronometer;
 
@@ -29,7 +36,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
         //==============================================================
         spinner = (Spinner) findViewById(R.id.list_route);
-        String selected = spinner.getSelectedItem().toString();
+        selected = spinner.getSelectedItem().toString();
         ArrayAdapter<?> adapter;
         adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -43,9 +50,6 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
             @Override
             public void onChronometerTick(Chronometer chronometer) {
                 elapsedMillis = SystemClock.elapsedRealtime() -  chronometer.getBase();
-                if (elapsedMillis > 5000) {
-                    Toast.makeText(getApplicationContext(), "прошло 5 секунд", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
@@ -65,8 +69,22 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
                 mChronometer.stop();
                 stopCounter = (int) elapsedMillis;
 
+                sQlite = new SQLiteHelper(BusActivity.this,"StationsRoutes.db", null, 1);
+                SQLiteDatabase sdb;
+                sdb = sQlite.getWritableDatabase();
+
+                ContentValues values = new ContentValues();
+                values.put(SQLiteHelper.FIRST_STATION_COLUMN, selected1);
+                values.put(SQLiteHelper.LAST_STATION_COLUMN, selected2);
+                values.put(SQLiteHelper.TRANSPORT_COLUMN, "Автобус");
+                values.put(SQLiteHelper.TRAVEL_TIME_COLUMN, stopCounter);
+                values.put(SQLiteHelper.NUMBER_COLUMN, selected);
+
+                sdb.insert("tableAndroid", null, values);
             }
         });
+
+
         cancel = (Button)findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,10 +101,10 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         choiceOfBus = item.toString();
 
         spinner1 = (Spinner) findViewById(R.id.station_first);
-        String selected1 = spinner1.getSelectedItem().toString();
+        selected1 = spinner1.getSelectedItem().toString();
 
         spinner2 = (Spinner) findViewById(R.id.station_last);
-        String selected2 = spinner2.getSelectedItem().toString();
+        selected2 = spinner2.getSelectedItem().toString();
 
         ArrayAdapter<?> adapter1;
         ArrayAdapter<?> adapter2;
