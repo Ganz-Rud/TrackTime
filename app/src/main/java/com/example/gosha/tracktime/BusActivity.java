@@ -1,39 +1,81 @@
 package com.example.gosha.tracktime;
 
 import android.app.Activity;
+
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class BusActivity extends Activity implements AdapterView.OnItemSelectedListener
 {
-    TextView textView;
-    TextView textView2;
     Spinner spinner, spinner1, spinner2;
     String choiceOfBus;
+    Button go, stop, cancel;
+    long elapsedMillis;
+    int stopCounter;
+
+    Chronometer mChronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bus_activity);
+        setContentView(R.layout.activity_bus);
 
-        textView = (TextView) findViewById(R.id.textView2);
-        textView2 = (TextView) findViewById(R.id.textView3);
-
+        //==============================================================
         spinner = (Spinner) findViewById(R.id.list_route);
         String selected = spinner.getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
-
         ArrayAdapter<?> adapter;
         adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        //===============================================================
+
+        mChronometer = (Chronometer) findViewById(R.id.chronometer);
+
+        mChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                elapsedMillis = SystemClock.elapsedRealtime() -  chronometer.getBase();
+                if (elapsedMillis > 5000) {
+                    Toast.makeText(getApplicationContext(), "прошло 5 секунд", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        go = (Button) findViewById(R.id.startButton);
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mChronometer.start();
+            }
+        });
+
+        // по нажатии клавиши стоп записывается в бд данные о поездке и потом вызывается окно с результатом поездки и главное меню
+        stop = (Button) findViewById(R.id.stopButton);
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mChronometer.stop();
+                stopCounter = (int) elapsedMillis;
+
+            }
+        });
+        cancel = (Button)findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mChronometer.setBase(SystemClock.elapsedRealtime());
+            }
+        });
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
@@ -42,11 +84,9 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
         spinner1 = (Spinner) findViewById(R.id.station_first);
         String selected1 = spinner1.getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(),selected1,Toast.LENGTH_SHORT).show();
 
         spinner2 = (Spinner) findViewById(R.id.station_last);
         String selected2 = spinner2.getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(),selected2,Toast.LENGTH_SHORT).show();
 
         ArrayAdapter<?> adapter1;
         ArrayAdapter<?> adapter2;
@@ -106,6 +146,5 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

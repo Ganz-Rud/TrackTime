@@ -29,7 +29,8 @@
         <activity android:name=".BusActivity" />
         <activity android:name=".TrolleyActivity" />
         <activity android:name=".TramActivity" />
-        <activity android:name=".MetroActivity"></activity>
+        <activity android:name=".MetroActivity" />
+        <activity android:name=".RecordingTime"></activity>
     </application>
 
 </manifest>

@@ -26,14 +26,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        Button go = (Button) findViewById(R.id.go);
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
-                startActivity(intent);
-            }
-        });
 
         Button statistics = (Button) findViewById(R.id.statistics);
         statistics.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +57,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button go = (Button) findViewById(R.id.go);
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                //Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
+                //startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -99,11 +100,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    int busStart    = 11111;
-    int trollStart  = 22222;
-    int tramStart   = 33333;
-    int metroStart  = 44444;
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -112,22 +108,18 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_bus) {
             Intent intent = new Intent(MainActivity.this, BusActivity.class);
-            intent.setFlags(busStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_troll) {
             Intent intent = new Intent(MainActivity.this, TrolleyActivity.class);
-            intent.setFlags(trollStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_tram) {
             Intent intent = new Intent(MainActivity.this, TramActivity.class);
-            intent.setFlags(tramStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_metro) {
             Intent intent = new Intent(MainActivity.this, MetroActivity.class);
-            intent.setFlags(metroStart);
             startActivity(intent);
 
         } else if (id == R.id.nav_statistics) {

@@ -50,10 +50,7 @@
                 android:entries ="@array/avtobus">
 
             </Spinner>
-
         </LinearLayout>
-
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,11 +59,6 @@
             android:text="Откуда: "
             android:id="@+id/textViewFROM" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </LinearLayout>
 
         <Spinner
             android:layout_width="300dp"
@@ -76,62 +68,94 @@
             android:entries="@array/bus_2"
             android:layout_marginTop="10dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Куда: "
-                android:id="@+id/textViewTO" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/checkBox"
-                android:layout_marginLeft="20dp"
-                android:checked="false"/>
-        </LinearLayout>
-
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Куда: "
+            android:id="@+id/textViewTO" />
 
         <Spinner
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/station_last"
             android:layout_weight="0.04"
-            android:entries="@array/bus_1"
+            android:entries="@array/troll_16"
             android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="frequency"
+            android:id="@+id/frequency" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Старт!"
+            android:id="@+id/startButton"
+            android:background="@color/greenStart"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="20dp" />
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/textView2" />
+                android:text="Время: "
+                android:id="@+id/DONT_TOUCH3"
+                android:layout_weight="0.1"/>
 
-            <TextView
+            <Chronometer
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/textView3" />
+                android:id="@+id/chronometer"
+                android:layout_weight="0.4"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сброс"
+                android:id="@+id/cancel"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5" />
         </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Стоп!"
+            android:id="@+id/stopButton"
+            android:background="@color/redStop"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
-    <Button
-        android:layout_width="400dp"
-        android:layout_height="80dp"
-        android:text="Старт!"
-        android:id="@+id/startButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
 </RelativeLayout>
