@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gosha.tracktime">
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +30,7 @@
         <activity android:name=".TrolleyActivity" />
         <activity android:name=".TramActivity" />
         <activity android:name=".MetroActivity" />
-        <activity android:name=".RecordingTime"></activity>
+        <activity android:name=".Statistics"></activity>
     </application>
 
 </manifest>

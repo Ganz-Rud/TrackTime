@@ -13,16 +13,17 @@ import android.util.Log;
 public class SQLiteHelper extends SQLiteOpenHelper implements BaseColumns{
 
     //столбцы
-    public static final String TRANSPORT_COLUMN = "transport";
-    public static final String NUMBER_COLUMN = "number";
+    public static final String TRANSPORT_COLUMN     = "transport";
+    public static final String NUMBER_COLUMN        = "number";
     public static final String FIRST_STATION_COLUMN = "first_station";
-    public static final String LAST_STATION_COLUMN = "last_station";
-    public static final String TRAVEL_TIME_COLUMN = "travel_time";
+    public static final String LAST_STATION_COLUMN  = "last_station";
+    public static final String TRAVEL_TIME_COLUMN   = "travel_time";
 
-    private static final String DATABASE_NAME = "StationsRoutes.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME       = "StationsRoutes.db";
+    private static final int DATABASE_VERSION       = 1;
 
-    public static final String DATABASE_TABLE = "tableAndroid";
+    public static final String DATABASE_TABLE       = "tableAndroid";
+
     private static final String DATABASE_CREATE_SCRIPT = "create table "
             + DATABASE_TABLE + " (" + BaseColumns._ID
             + " integer primary key autoincrement, " + TRANSPORT_COLUMN

@@ -1,18 +1,17 @@
 package com.example.gosha.tracktime;
 
 import android.app.Activity;
-
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class BusActivity extends Activity implements AdapterView.OnItemSelectedListener
 {
@@ -23,10 +22,12 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
     Button go, stop, cancel;
     long elapsedMillis;
     int stopCounter;
-    String selected = "";
+    String selected  = "";
     String selected1 = "";
     String selected2 = "";
-
+    String selected3 = "";
+    int count;
+    private Vibrator vibro;
     Chronometer mChronometer;
 
     @Override
@@ -36,20 +37,24 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
         //==============================================================
         spinner = (Spinner) findViewById(R.id.list_route);
-        selected = spinner.getSelectedItem().toString();
         ArrayAdapter<?> adapter;
         adapter = ArrayAdapter.createFromResource(this, R.array.avtobus, android.R.layout.simple_spinner_item );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        selected = spinner.getSelectedItem().toString();
         //===============================================================
+        vibro = (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
 
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
-
         mChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
                 elapsedMillis = SystemClock.elapsedRealtime() -  chronometer.getBase();
+                 count = (int) elapsedMillis / 1000;
+                if ((count % 5) == 0) {
+                    vibro.vibrate(200);
+                }
             }
         });
 
@@ -57,6 +62,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mChronometer.setBase(SystemClock.elapsedRealtime());
                 mChronometer.start();
             }
         });
@@ -67,7 +73,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
             @Override
             public void onClick(View v) {
                 mChronometer.stop();
-                stopCounter = (int) elapsedMillis;
+                stopCounter = (int) elapsedMillis/1000;
 
                 sQlite = new SQLiteHelper(BusActivity.this,"StationsRoutes.db", null, 1);
                 SQLiteDatabase sdb;
@@ -111,24 +117,28 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
         switch (choiceOfBus) {
             case "1":
+                selected3 = "1";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_1, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "2":
+                selected3 = "2";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_2, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "12":
+                selected3 = "12";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_12, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "43":
+                selected3 = "43";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_43, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner1.setAdapter(adapter1);
