@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.gosha.tracktime.ConfirmationActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Коментарий"
+            android:id="@+id/textView4"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:singleLine="false"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Сохранить данные?"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout4"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Да"
+                android:id="@+id/yes"
+                android:background="@color/greenStart"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/editText"
+                android:layout_toStartOf="@+id/linearLayout4"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"/>
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="НЕТ!"
+                android:id="@+id/no"
+                android:background="@color/redStop"
+                android:layout_alignParentBottom="true"
+                android:layout_alignEnd="@+id/linearLayout4"
+                android:layout_gravity="right"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

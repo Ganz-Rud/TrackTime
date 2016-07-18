@@ -26,11 +26,11 @@ public class PreSettingStart extends Activity implements AdapterView.OnItemSelec
         textView1 = (TextView) findViewById(R.id.textView2);
         textView3 = (TextView) findViewById(R.id.textView3);
         //-------
-        TransportHelper helper = new TransportHelper();
-        helper.setTransport(trans);
-
-        TextView nameTransport = (TextView) findViewById(R.id.transport);
-        nameTransport.setText(helper.getNameTransport());
+//        ConfirmationActivity helper = new ConfirmationActivity();
+//        helper.setTransport(trans);
+//
+//        TextView nameTransport = (TextView) findViewById(R.id.transport);
+//        nameTransport.setText(helper.getNameTransport());
 
         Spinner spinner = (Spinner) findViewById(R.id.list_route);
         String selected = spinner.getSelectedItem().toString();

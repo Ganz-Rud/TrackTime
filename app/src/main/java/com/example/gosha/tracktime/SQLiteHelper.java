@@ -1,16 +1,22 @@
 package com.example.gosha.tracktime;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by gosha on 13.07.2016.
  */
 public class SQLiteHelper extends SQLiteOpenHelper implements BaseColumns{
+
+    private SQLiteDatabase db;
 
     //столбцы
     public static final String TRANSPORT_COLUMN     = "transport";
@@ -18,6 +24,7 @@ public class SQLiteHelper extends SQLiteOpenHelper implements BaseColumns{
     public static final String FIRST_STATION_COLUMN = "first_station";
     public static final String LAST_STATION_COLUMN  = "last_station";
     public static final String TRAVEL_TIME_COLUMN   = "travel_time";
+    public static final String COMMENT_COLUMN       = "comment";
 
     private static final String DATABASE_NAME       = "StationsRoutes.db";
     private static final int DATABASE_VERSION       = 1;
@@ -28,7 +35,8 @@ public class SQLiteHelper extends SQLiteOpenHelper implements BaseColumns{
             + DATABASE_TABLE + " (" + BaseColumns._ID
             + " integer primary key autoincrement, " + TRANSPORT_COLUMN
             + " text not null, " + NUMBER_COLUMN + " text not null, " + FIRST_STATION_COLUMN
-            + " text not null, " + LAST_STATION_COLUMN + " text not null, " + TRAVEL_TIME_COLUMN + " integer);";
+            + " text not null, " + LAST_STATION_COLUMN + " text not null, " + COMMENT_COLUMN
+            + " text not null, " + TRAVEL_TIME_COLUMN + " integer);";
 
     SQLiteHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -57,4 +65,5 @@ public class SQLiteHelper extends SQLiteOpenHelper implements BaseColumns{
         // Создаём новую таблицу
         onCreate(db);
     }
+
 }

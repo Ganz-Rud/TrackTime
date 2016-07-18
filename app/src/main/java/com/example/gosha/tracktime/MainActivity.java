@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         Button statistics = (Button) findViewById(R.id.statistics);
         statistics.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,17 +35,17 @@ public class MainActivity extends AppCompatActivity
         });
 
         // кнопочка с мылом надо переделать!
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Идёт синхронизация", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-                Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
-                startActivity(intent);
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Идёт синхронизация", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//
+//                Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,8 +60,8 @@ public class MainActivity extends AppCompatActivity
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                //Intent intent = new Intent(MainActivity.this, SelectionActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, BusActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -111,20 +109,16 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_troll) {
-            Intent intent = new Intent(MainActivity.this, TrolleyActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(MainActivity.this, TrolleyActivity.class);
+//            startActivity(intent);
 
         } else if (id == R.id.nav_tram) {
-            Intent intent = new Intent(MainActivity.this, TramActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(MainActivity.this, TramActivity.class);
+//            startActivity(intent);
 
         } else if (id == R.id.nav_metro) {
-            Intent intent = new Intent(MainActivity.this, MetroActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_statistics) {
-
-        } else if (id == R.id.nav_connect) {
+//            Intent intent = new Intent(MainActivity.this, MetroActivity.class);
+//            startActivity(intent);
 
         }
 

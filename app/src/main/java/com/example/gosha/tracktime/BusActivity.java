@@ -1,8 +1,7 @@
 package com.example.gosha.tracktime;
 
 import android.app.Activity;
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
@@ -12,11 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class BusActivity extends Activity implements AdapterView.OnItemSelectedListener
 {
-    private SQLiteHelper sQlite;
-
     Spinner spinner, spinner1, spinner2;
     String choiceOfBus;
     Button go, stop, cancel;
@@ -52,7 +52,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
             public void onChronometerTick(Chronometer chronometer) {
                 elapsedMillis = SystemClock.elapsedRealtime() -  chronometer.getBase();
                  count = (int) elapsedMillis / 1000;
-                if ((count % 5) == 0) {
+                if (((count % 30) == 0)&& (count!=0)) {
                     vibro.vibrate(200);
                 }
             }
@@ -75,18 +75,22 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
                 mChronometer.stop();
                 stopCounter = (int) elapsedMillis/1000;
 
-                sQlite = new SQLiteHelper(BusActivity.this,"StationsRoutes.db", null, 1);
-                SQLiteDatabase sdb;
-                sdb = sQlite.getWritableDatabase();
+                //Intent intent = new Intent(BusActivity.this, ConfirmationActivity.class);
+                ArrayList<String> list = new ArrayList<String>();
+                list.add(selected1);
+                list.add(selected2);
+                list.add(selected3);
+                list.add("Автобус");
 
-                ContentValues values = new ContentValues();
-                values.put(SQLiteHelper.FIRST_STATION_COLUMN, selected1);
-                values.put(SQLiteHelper.LAST_STATION_COLUMN, selected2);
-                values.put(SQLiteHelper.TRANSPORT_COLUMN, "Автобус");
-                values.put(SQLiteHelper.TRAVEL_TIME_COLUMN, stopCounter);
-                values.put(SQLiteHelper.NUMBER_COLUMN, selected);
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("EXTRA_DATA", list);
 
-                sdb.insert("tableAndroid", null, values);
+                Intent intent = new Intent(BusActivity.this, ConfirmationActivity.class);
+                intent.putExtras(bundle);
+                intent.setFlags(stopCounter);
+
+                startActivity(intent);
+
             }
         });
 
@@ -106,6 +110,8 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         Object item = parent.getItemAtPosition(pos);
         choiceOfBus = item.toString();
 
+        TextView frequency = (TextView)findViewById(R.id.frequency);
+
         spinner1 = (Spinner) findViewById(R.id.station_first);
         selected1 = spinner1.getSelectedItem().toString();
 
@@ -117,6 +123,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
         switch (choiceOfBus) {
             case "1":
+                frequency.setText("Частота хождения: каждые 8 минут");
                 selected3 = "1";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_1, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -124,6 +131,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "2":
+                frequency.setText("Частота хождения: каждые 12 минут");
                 selected3 = "2";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_2, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -131,6 +139,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "12":
+                frequency.setText("Частота хождения: каждые 20 минут");
                 selected3 = "12";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_12, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -138,6 +147,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
                 spinner1.setOnItemSelectedListener(this);
                 break;
             case "43":
+                frequency.setText("Частота хождения: каждые 5 минут");
                 selected3 = "43";
                 adapter1 = ArrayAdapter.createFromResource(this, R.array.bus_43, android.R.layout.simple_spinner_item);
                 adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
