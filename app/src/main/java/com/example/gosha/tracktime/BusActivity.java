@@ -43,6 +43,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
         selected = spinner.getSelectedItem().toString();
+        spinner.setEnabled(true);
         //===============================================================
         vibro = (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
 
@@ -62,6 +63,9 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                spinner.setEnabled(false);
+                spinner1.setEnabled(false);
+                spinner2.setEnabled(false);
                 mChronometer.setBase(SystemClock.elapsedRealtime());
                 mChronometer.start();
             }

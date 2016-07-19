@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="redStop">#ee204d</color>
     <color name="greenStart">#3caa3c</color>
+    <color name="gray">#61656e</color>
 </resources>

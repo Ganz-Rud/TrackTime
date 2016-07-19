@@ -36,29 +36,16 @@ public class ConfirmationActivity extends Activity {
         number = list.get(2);
         transport = list.get(3);
 
-        final EditText editText = (EditText)findViewById(R.id.editText);
+
 
 
         Button yes = (Button)findViewById(R.id.yes);
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final EditText editText = (EditText)findViewById(R.id.editText);
+                comment = editText.getText().toString();
 
-                editText.setOnKeyListener(new View.OnKeyListener()
-                                          {
-                                              public boolean onKey(View v, int keyCode, KeyEvent event)
-                                              {
-                                                  if(event.getAction() == KeyEvent.ACTION_DOWN &&
-                                                          (keyCode == KeyEvent.KEYCODE_ENTER))
-                                                  {
-                                                      // сохраняем текст, введенный до нажатия Enter в переменную
-                                                      comment = editText.getText().toString();
-                                                      return true;
-                                                  }
-                                                  return false;
-                                              }
-                                          }
-                );
                 sQlite = new SQLiteHelper(ConfirmationActivity.this,"StationsRoutes.db", null, 1);
                 SQLiteDatabase sdb;
                 sdb = sQlite.getWritableDatabase();
