@@ -22,7 +22,6 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
     Button go, stop, cancel;
     long elapsedMillis;
     int stopCounter;
-    String selected  = "";
     String selected1 = "";
     String selected2 = "";
     String selected3 = "";
@@ -42,7 +41,8 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        selected = spinner.getSelectedItem().toString();
+        //selected = spinner.getSelectedItem().toString();
+
         spinner.setEnabled(true);
         //===============================================================
         vibro = (Vibrator)this.getSystemService(VIBRATOR_SERVICE);
@@ -78,8 +78,7 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
             public void onClick(View v) {
                 mChronometer.stop();
                 stopCounter = (int) elapsedMillis/1000;
-
-                //Intent intent = new Intent(BusActivity.this, ConfirmationActivity.class);
+                
                 ArrayList<String> list = new ArrayList<String>();
                 list.add(selected1);
                 list.add(selected2);
@@ -97,7 +96,6 @@ public class BusActivity extends Activity implements AdapterView.OnItemSelectedL
 
             }
         });
-
 
         cancel = (Button)findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {

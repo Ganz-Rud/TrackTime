@@ -28,7 +28,8 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner" />
+            android:id="@+id/spinner_statistic1"
+            android:entries ="@array/bus_all" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,41 +47,50 @@
             android:text="До: "
             android:id="@+id/to" />
 
-        <Button
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="отобразить"
-            android:id="@+id/button"
-            android:layout_below="@+id/linearLayout2"
-            android:layout_centerHorizontal="true" />
-
-        <!--<Spinner-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/spinner2"-->
-            <!--android:layout_below="@+id/linearLayout2"-->
-            <!--android:layout_toEndOf="@+id/linearLayout3" />-->
+            android:id="@+id/spinner_statistic2"
+            android:entries ="@array/bus_all" />
 
     </LinearLayout>
 
-
-
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/statistic_text"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/linearLayout5">
 
-    <!--<ListView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/listView"-->
-        <!--android:layout_below="@+id/linearLayout3"-->
-        <!--android:layout_centerHorizontal="true" />-->
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="отобразить"
+        android:id="@+id/button"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Среднее время:"
+            android:id="@+id/textView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/second_time" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout5" />
 
 </RelativeLayout>

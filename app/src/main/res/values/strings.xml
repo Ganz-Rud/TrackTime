@@ -176,4 +176,32 @@
         <item>Кировская</item>
         <item>Парк культуры</item>
     </string-array>
+
+    <string-array name="bus_all">
+        <item>Щербинки - 2</item>
+        <item>Музей Сахарова</item>
+        <item>Лебедева</item>
+        <item>Площадь Жукова</item>
+        <item>Кинотеатр Электрон</item>
+        <item>Площадь Лядова</item>
+        <item>Площадь Горького</item>
+        <item>Площадь Свободы</item>
+        <item>Площадь Минина</item>
+        <item>Площадь Сенная</item>
+        <item>Родионова</item>
+        <item>Подновье</item>
+        <item>Тех.Университет</item>
+        <item>Студенческая</item>
+        <item>Площадь Революции</item>
+        <item>Площадь Комсомольская</item>
+        <item>Актюбинская</item>
+        <item>Ярошенко</item>
+        <item>Циолковского</item>
+        <item>проспект 70 лет октября</item>
+        <item>7-й Микрорайон</item>
+        <item>ЗКПД-4</item>
+        <item>Стрелка</item>
+        <item>площадь Ленина</item>
+        <item>Долгополова</item>
+    </string-array>
 </resources>
